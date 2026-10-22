@@ -4,7 +4,7 @@ Sprint 1 introduces the STM32 development workflow and establishes the software 
 The sprint's purpose is to verify that the development board can be programmed and debugged from the PC, that firmware can interact with hardware, and that the MCU can communicate observable status information to a host computer. These are basic building blocks for larger projects that later combine sensors, control logic, task scheduling, and serial logging.
 
 Implementation:
-1. first we download and setup the software which is STM32CUBEIDE and STM32CUBEMX as well as identifying the microcontroller we are working on which is the NUCLEO-L476RG(Part 1)
+1. First we download and setup the software which is STM32CUBEIDE and STM32CUBEMX as well as identifying the microcontroller we are working on which is the NUCLEO-L476RG(Part 1)
    
 2. The bare-metal exercise uses the STM32 HAL to change a GPIO output at a one-second interval. The GPIO pin must be configured as an output in the project configuration or initialization code. The main loop then toggles the pin and delays before repeating. This task introduces the firmware cycle of initialization followed by a continuous loop (Part 2)
 
@@ -13,3 +13,12 @@ Implementation:
 4. The RTOS exercise creates a new project and runs a single LED-blinking task. Instead of relying on a blocking HAL delay in the main loop, the task waits using an RTOS delay API(Part 4)
 
 5. The bonus task combines GPIO and UART behavior. The LED interval is specified in milliseconds, and each state change is accompanied by a text message such as “LED ON” or “LED OFF”. This makes program behavior visible both physically on the board and digitally in a serial console. A delay variable can be used to change the blink rate without changing the program's structure.(Bonus)
+
+Results:
+1. The result for part 2 was the onboard led to blink and the specified interval
+
+2. The result for part 3 was tera term when configured to the baud rate of the board resulting in  the message being displayed in the tera term window
+
+3. The result for part 4 was the onboard led blinking using the rtos task thread instead of a bare metal implementation
+
+4. The result of the bonus was a uart transimision indicating when the led was on and off while th eled was blinking
