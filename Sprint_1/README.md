@@ -1,4 +1,5 @@
-Overview:/n
+Overview:
+
 Sprint 1 introduces the STM32 development workflow and establishes the software and programming foundations for later embedded-system work. The activities progress from installing the tools, to controlling a GPIO output, to transmitting serial messages, and then to running a simple LED task under an RTOS. A bonus activity combines LED state changes with UART status messages and a configurable delay.
 The sprint's purpose is to verify that the development board can be programmed and debugged from the PC, that firmware can interact with hardware, and that the MCU can communicate observable status information to a host computer. These are basic building blocks for larger projects that later combine sensors, control logic, task scheduling, and serial logging.
 
